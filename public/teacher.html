@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ניהול מורה</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/logo.png" alt="לוגו" class="logo">
+            <h1>מערכת ניהול מורה</h1>
+        </div>
+        <div id="message" class="message"></div>
+    </header>
+
+    <main>
+        <div class="teacher-actions card">
+            <label for="teacher-student-select">בחר תלמיד:</label>
+            <select id="teacher-student-select"></select>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="grades">ציונים</button>
+            <button class="tab-button" data-tab="absences">חיסורים</button>
+            <button class="tab-button" data-tab="delays">איחורים</button>
+            <button class="tab-button" data-tab="create-student">יצירת תלמיד</button>
+        </div>
+
+        <div id="grades-tab" class="tab-content active card">
+            <form id="grade-form">
+                <h3>הזנת ציון</h3>
+                
+                <label for="grade-subject">מקצוע:</label>
+                <input type="text" id="grade-subject" placeholder="מדעים" required>
+
+                <label for="grade-value">ציון:</label>
+                <input type="number" id="grade-value" placeholder="85" required>
+                
+                <label for="grade-date">תאריך:</label>
+                <input type="date" id="grade-date" required>
+                
+                <label for="grade-description">הערות:</label>
+                <textarea id="grade-description" placeholder="הערות על הציון"></textarea>
+                
+                <button type="submit">הוסף ציון</button>
+            </form>
+        </div>
+
+        <div id="absences-tab" class="tab-content card">
+            <form id="absence-form">
+                <h3>הזנת חיסור</h3>
+                
+                <label for="absence-date">תאריך:</label>
+                <input type="date" id="absence-date" required>
+
+                <label for="absence-hours">שעות:</label>
+                <input type="number" id="absence-hours" placeholder="4" required>
+                
+                <label for="absence-reason">סיבה:</label>
+                <textarea id="absence-reason" placeholder="סיבת החיסור"></textarea>
+
+                <button type="submit">הוסף חיסור</button>
+            </form>
+        </div>
+
+        <div id="delays-tab" class="tab-content card">
+            <form id="delay-form">
+                <h3>הזנת איחור</h3>
+                
+                <label for="delay-date">תאריך:</label>
+                <input type="date" id="delay-date" required>
+
+                <label for="delay-minutes">דקות:</label>
+                <input type="number" id="delay-minutes" placeholder="10" required>
+                
+                <label for="delay-reason">סיבה:</label>
+                <textarea id="delay-reason" placeholder="סיבת האיחור"></textarea>
+
+                <button type="submit">הוסף איחור</button>
+            </form>
+        </div>
+
+        <div id="create-student-tab" class="tab-content card">
+            <form id="create-student-form">
+                <h3>יצירת תלמיד חדש</h3>
+                
+                <label for="student-name-input">שם:</label>
+                <input type="text" id="student-name-input" placeholder="שם מלא" required>
+
+                <label for="student-class-input">כיתה:</label>
+                <input type="text" id="student-class-input" placeholder="י'1" required>
+
+                <label for="student-username-input">שם משתמש:</label>
+                <input type="text" id="student-username-input" placeholder="שם משתמש" required>
+
+                <label for="student-password-input">סיסמה:</label>
+                <input type="password" id="student-password-input" placeholder="סיסמה" required>
+
+                <button type="submit">צור תלמיד</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="/teacher.js"></script>
+</body>
+</html>

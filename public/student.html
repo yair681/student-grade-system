@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ציונים</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/logo.png" alt="לוגו" class="logo">
+            <h1>מערכת ציונים</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id="student-info" class="card student-info-card">
+            </div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="data-display">ציונים ונתונים</button>
+            <button class="tab-button" data-tab="notifications">התראות אחרונות</button>
+        </div>
+
+        <div id="data-display-tab" class="tab-content active card">
+            <div id="data-display"></div>
+            <div id="absences-display">
+                <h3>חיסורים</h3>
+                <ul class="absences-list">
+                    <li>אין חיסורים להצגה.</li>
+                </ul>
+            </div>
+            <div id="delays-display">
+                <h3>איחורים</h3>
+                <ul class="delays-list">
+                    <li>אין איחורים להצגה.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="notifications-tab" class="tab-content card">
+            <h3>התראות אחרונות</h3>
+            <ul id="notifications-list" class="notifications-list">
+                </ul>
+        </div>
+
+        <div id="message" class="message"></div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/student.js"></script>
+</body>
+</html>
